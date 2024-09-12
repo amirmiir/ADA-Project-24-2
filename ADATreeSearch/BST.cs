@@ -19,7 +19,7 @@ namespace ADATreeSearch
         }
 
         /*Método de Insertar un elemento al árbol*/
-        public void insert(int e)
+        public void Insert(int e)
         {
             BSTNode p = this.root, prev=null;
             /*Iterando a través del árbol para buscar el lugar que le corresponde
@@ -87,34 +87,62 @@ namespace ADATreeSearch
             }
         }
 
-        public void Preorder()
+        public void PreorderTraversal()
         {
-            Preorder(root);
+            PreorderTraversal(root);
         }
 
-        public void Preorder(BSTNode p)
+        /*El objetivo de este método es recorrer el árbol VLR*/
+        public void PreorderTraversal(BSTNode p)
         {
             /*Only one case existing for the recursion*/
             if(p != null)
             {
                 /*Accomplishing goal for current BSTNode*/
-                Visit(p.left);
+                Visit(p);
 
                 /*Starting the recursion for the two children of the current BSTNode*/
-                Preorder(p.left);
-                Preorder(p.right);
+                PreorderTraversal(p.left);
+                PreorderTraversal(p.right);
             }
             /*Else Does Nothing*/
         }
 
-        public void Inorder()
+        public void InorderTraversal()
         {
-
+            InorderTraversal(root);
         }
 
-        public void Postorder()
+        /*El objetivo de este método es recorrer el árbol LVR*/
+        public void InorderTraversal(BSTNode p)
         {
+            if(p != null)
+            {
+                InorderTraversal(p.left);
 
+                Visit(p);
+
+                InorderTraversal(p.right);
+            }
         }
+
+        public void PostorderTraversal()
+        {
+            PostorderTraversal(root);            
+        }
+
+        /*El objetivo de este método es recorrer el árbol en LRV*/
+        public void PostorderTraversal(BSTNode p)
+        {
+            if (p != null)
+            {
+                PostorderTraversal(p.left);
+                PostorderTraversal(p.right);
+
+                Visit(p);
+            }
+        }
+
+
     }
 }
