@@ -14,7 +14,7 @@ namespace ADATreeSearch
     {
         public static void Main(string[] args)
         {
-            BST tree = new BST();
+            
             BSTMain bSTMain = new BSTMain();
             /*
              * 
@@ -34,10 +34,10 @@ namespace ADATreeSearch
                 {
                     case 0: break;
                     case 1:
-                        bSTMain.Custom(tree);
+                        bSTMain.Custom();
                         break;
                     case 2:
-                        bSTMain.FillRandom(tree);
+                        bSTMain.FillRandom();
                         break;
                     default:
                         Console.WriteLine("Opcion invalida.\n\n");
@@ -46,9 +46,10 @@ namespace ADATreeSearch
             }
         }
 
-        public void Custom(BST tree)
+        public void Custom()
         {
             BSTMain bSTMain=new BSTMain();
+            BST tree = new BST();
             tree.Insert(10);
             tree.Insert(5);
             tree.Insert(20);
@@ -64,8 +65,10 @@ namespace ADATreeSearch
             bSTMain.Actions(tree);
         }
 
-        public void FillRandom(BST tree)
+        public void FillRandom()
         {
+            BSTMain bSTMain = new BSTMain();
+            BST tree = new BST();
             Console.WriteLine("");
             int n = Convert.ToInt32(Console.ReadLine());
             Random rand = new Random();
@@ -81,6 +84,8 @@ namespace ADATreeSearch
                     tree.Insert(randomNumber);
                 }
             }
+
+            bSTMain.Actions(tree);
         }
 
         public void Actions(BST tree)
@@ -103,7 +108,6 @@ namespace ADATreeSearch
             cronometro.Stop();
             Console.WriteLine("El tiempo para realizar PreOrder: {0} ms", cronometro.ElapsedMilliseconds);
             Console.ReadLine();
-
 
         }
 
