@@ -69,7 +69,7 @@ namespace ADATreeSearch
         {
             BSTMain bSTMain = new BSTMain();
             BST tree = new BST();
-            Console.WriteLine("");
+            Console.WriteLine("Ingrese la cantidad de nodos para el árbol: ");
             int n = Convert.ToInt32(Console.ReadLine());
             Random rand = new Random();
             /*Making use of a hashmap to make sure we do not have duplicates due to the data structure*/
@@ -96,6 +96,7 @@ namespace ADATreeSearch
             cronometro.Start();
             tree.BreadthFirstSearch();
             cronometro.Stop();
+            Console.WriteLine("El tiempo para realizar BFS: {0} ms", Convert.ToDouble(cronometro.ElapsedTicks)/10000);
             Console.WriteLine("El tiempo para realizar BFS: {0} ms", cronometro.ElapsedMilliseconds);
             Console.ReadLine();
 
@@ -106,6 +107,7 @@ namespace ADATreeSearch
             cronometro.Start();
             tree.PreorderTraversal();
             cronometro.Stop();
+            Console.WriteLine("El tiempo para realizar BFS: {0} ms", Convert.ToDouble(cronometro.ElapsedTicks) / 10000);
             Console.WriteLine("El tiempo para realizar PreOrder: {0} ms", cronometro.ElapsedMilliseconds);
             Console.ReadLine();
 
