@@ -9,7 +9,7 @@ namespace QueueADT
     public interface IQueueADT<E>
     {
         void add(E elemento);
-        E remove(E elemento);
+        E remove();
         E poll();
         E peek();
         void clear();

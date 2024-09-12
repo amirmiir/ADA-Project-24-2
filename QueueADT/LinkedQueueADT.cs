@@ -32,8 +32,9 @@ namespace QueueADT
             contador++;
         }
 
-        public E remove(E item)
+        public E remove()
         {
+            E item;
             if (isEmpty())
             {
                 throw new Exception();

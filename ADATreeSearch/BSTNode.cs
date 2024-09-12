@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADATreeSearch
 {
-    class BSTNode
+    public class BSTNode
     {
         private int key;
         public BSTNode left, right;
@@ -27,12 +27,12 @@ namespace ADATreeSearch
             this.right = right;
         }
 
-        public int getKey()
+        public int GetKey()
         {
             return key;
         }
 
-        public void setKey(int key)
+        public void SetKey(int key)
         {
             this.key = key;
         }
